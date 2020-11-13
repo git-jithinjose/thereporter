@@ -53,3 +53,20 @@ CREATE TABLE `user_setup` (
   UNIQUE KEY `mobile_No_UNIQUE` (`mobile_No`)
 )
 
+
+CREATE TABLE `daily_activity_report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reported_by` varchar(45) DEFAULT NULL,
+  `reported_on` varchar(45) DEFAULT NULL,
+  `shift` varchar(45) DEFAULT NULL,
+  `location` varchar(45) DEFAULT NULL,
+  `activities` varchar(45) DEFAULT NULL,
+  `property_manager_or_local_authorities` varchar(45) DEFAULT NULL,
+  `special_events` varchar(45) DEFAULT NULL,
+  `property_contact_info` varchar(45) DEFAULT NULL,
+  `reason` varchar(45) DEFAULT NULL,
+  `approve_notifications` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+
