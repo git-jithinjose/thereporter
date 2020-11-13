@@ -1,0 +1,55 @@
+//13 NOV 2020
+
+CREATE DATABASE `freporter`
+
+CREATE TABLE `third_party_injury` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reported_by` varchar(45) DEFAULT NULL,
+  `reported_on` varchar(45) DEFAULT NULL,
+  `date_and_time_of_injury` varchar(45) DEFAULT NULL,
+  `location` varchar(45) DEFAULT NULL,
+  `incident_type` varchar(45) DEFAULT NULL,
+  `description` varchar(45) DEFAULT NULL,
+  `attachment` varchar(45) DEFAULT NULL,
+  `reported_to` varchar(45) DEFAULT NULL,
+  `emergency_responder_name` varchar(45) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `report` varchar(45) DEFAULT NULL,
+  `injured_party_name` varchar(45) DEFAULT NULL,
+  `injured_party_email` varchar(45) DEFAULT NULL,
+  `injured_party_address` varchar(45) DEFAULT NULL,
+  `injured_party_phone_no` varchar(45) DEFAULT NULL,
+  `injured_party_driver_license` varchar(45) DEFAULT NULL,
+  `injured_party_birthday` varchar(45) DEFAULT NULL,
+  `injured_party_ssn` varchar(45) DEFAULT NULL,
+  `injured_party_other_information` varchar(45) DEFAULT NULL,
+  `injured_party_gender` varchar(45) DEFAULT NULL,
+  `injured_party_describe_injury` varchar(45) DEFAULT NULL,
+  `injured_party_cause_of_injury` varchar(45) DEFAULT NULL,
+  `was_the_party_involved_in_treated` varchar(45) DEFAULT NULL,
+  `witnesses` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+
+
+CREATE TABLE `user_setup` (
+  `user_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_Name` varchar(150) NOT NULL,
+  `gender` varchar(15) DEFAULT NULL,
+  `mobile_No` varchar(15) NOT NULL,
+  `email_Id` varchar(100) DEFAULT NULL,
+  `password` varchar(500) DEFAULT NULL,
+  `type` char(1) NOT NULL COMMENT 'C-Institution, I-Individual',
+  `inst_Name` char(200) DEFAULT NULL,
+  `inst_Type` char(50) DEFAULT NULL,
+  `inst_Reg_No` varchar(100) DEFAULT NULL,
+  `address` varchar(1000) DEFAULT NULL,
+  `pincode` int(11) DEFAULT NULL,
+  `submitted_On` datetime DEFAULT NULL,
+  `active_Status` char(1) NOT NULL DEFAULT 'A' COMMENT 'Active -Y, Deactive -D',
+  `admin_Status` char(1) NOT NULL DEFAULT 'N' COMMENT 'Admin -Y, NGO - N',
+  `deactivated_On` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_Id`),
+  UNIQUE KEY `mobile_No_UNIQUE` (`mobile_No`)
+)
+
