@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.thereporter.entities.DailyActivityReport;
+import com.project.thereporter.entities.DangerousSituation;
+import com.project.thereporter.entities.EmployeeInjuryReport;
 import com.project.thereporter.entities.ThirdPartyInjury;
 import com.project.thereporter.entities.repositories.DailyActivityReportRepository;
+import com.project.thereporter.entities.repositories.DangerousSituationRepository;
+import com.project.thereporter.entities.repositories.EmployeeInjuryReportRepository;
 import com.project.thereporter.entities.repositories.ThirdPartyInjuryRepository;
 import com.project.thereporter.utility.CustomHttpStatus;
 
@@ -27,6 +31,10 @@ public class ReporterController {
 	ThirdPartyInjuryRepository thirdPartyInjuryRepository;
 	@Autowired
 	DailyActivityReportRepository dailyActivityReportRepository;
+	@Autowired
+	DangerousSituationRepository  dangerousSituationRepository;
+	@Autowired
+	EmployeeInjuryReportRepository employeeInjuryReportRepository;
 	
 	@PostMapping("/saveThirdPartyInjury")
 	public ResponseEntity<Object> saveThirdPartyInjury(@RequestBody ThirdPartyInjury thirdPartyInjury) {
@@ -49,6 +57,36 @@ public class ReporterController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		} else {
 			DailyActivityReport flag = dailyActivityReportRepository.save(dailyActivityReport);
+			if (flag.getId()!=null && flag.getId()>0) {
+				return ResponseEntity.status(HttpStatus.OK)
+						.body(CustomHttpStatus.OK);
+			}else {
+				return ResponseEntity.status(HttpStatus.ALREADY_REPORTED)
+						.body(CustomHttpStatus.ALREADY_REPORTED);
+			}	
+		}
+	}
+	@PostMapping("/saveDangerousSituation")
+	public ResponseEntity<Object> saveDangerousSituationReport(@RequestBody DangerousSituation dangerousSituation) {
+		if (dangerousSituation == null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+		} else {
+			DangerousSituation flag = dangerousSituationRepository.save(dangerousSituation);
+			if (flag.getId()!=null && flag.getId()>0) {
+				return ResponseEntity.status(HttpStatus.OK)
+						.body(CustomHttpStatus.OK);
+			}else {
+				return ResponseEntity.status(HttpStatus.ALREADY_REPORTED)
+						.body(CustomHttpStatus.ALREADY_REPORTED);
+			}	
+		}
+	}
+	@PostMapping("/saveEmployeeInjuryReport")
+	public ResponseEntity<Object> saveEmployeeInjuryReport(@RequestBody EmployeeInjuryReport employeeInjuryReport) {
+		if (employeeInjuryReport == null) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+		} else {
+			EmployeeInjuryReport flag = employeeInjuryReportRepository.save(employeeInjuryReport);
 			if (flag.getId()!=null && flag.getId()>0) {
 				return ResponseEntity.status(HttpStatus.OK)
 						.body(CustomHttpStatus.OK);

@@ -69,4 +69,49 @@ CREATE TABLE `daily_activity_report` (
   PRIMARY KEY (`id`)
 ) 
 
+//14 NOV 2020
+
+CREATE TABLE `dangerous_situation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reported_by` varchar(45) DEFAULT NULL,
+  `reported_on` varchar(45) DEFAULT NULL,
+  `unique_identifier` varchar(45) DEFAULT NULL,
+  `emergency` varchar(45) DEFAULT NULL,
+  `situation_details` varchar(45) DEFAULT NULL,
+  `attachments` varchar(45) DEFAULT NULL,
+  `incident_location` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `follow` varchar(45) DEFAULT NULL,
+  `conditions` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `employee_injury_report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reported_by` varchar(45) DEFAULT NULL,
+  `reported_on` varchar(45) DEFAULT NULL,
+  `incident_id` varchar(45) DEFAULT NULL,
+  `injured_employee_name` varchar(45) DEFAULT NULL,
+  `job_title` varchar(45) DEFAULT NULL,
+  `super_visors_name` varchar(45) DEFAULT NULL,
+  `was_the_supervisor_informed` varchar(45) DEFAULT NULL,
+  `date_and_time_of_injury` varchar(45) DEFAULT NULL,
+  `witness_names` varchar(45) DEFAULT NULL,
+  `where_exactly_did_it_happen` varchar(45) DEFAULT NULL,
+  `what_was_the_employee_doing_at_that_time` varchar(45) DEFAULT NULL,
+  `what_could_have_been_done_to_prevent_this_injury` varchar(45) DEFAULT NULL,
+  `what_body_parts_were_injured` varchar(45) DEFAULT NULL,
+  `was_a_doctor_consulted` varchar(45) DEFAULT NULL,
+  `has_the_part_of_your_body_been_injured_before` varchar(45) DEFAULT NULL,
+  `your_signature` varchar(45) DEFAULT NULL,
+  `incident_location` varchar(45) DEFAULT NULL,
+  `attachments` varchar(45) DEFAULT NULL,
+  `notes` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+
+
+
 
