@@ -16,7 +16,7 @@ import javax.persistence.Table;
 		private Long id;
 
 		@Column(name = "reported_by")
-		private String reportedBy;
+		private Long reportedBy;
 
 		@Column(name = "reported_on")
 		private String reportedOn;
@@ -47,10 +47,6 @@ import javax.persistence.Table;
 
 		public Long getId() {
 			return id;
-		}
-
-		public String getReportedBy() {
-			return reportedBy;
 		}
 
 		public String getReportedOn() {
@@ -93,10 +89,6 @@ import javax.persistence.Table;
 			this.id = id;
 		}
 
-		public void setReportedBy(String reportedBy) {
-			this.reportedBy = reportedBy;
-		}
-
 		public void setReportedOn(String reportedOn) {
 			this.reportedOn = reportedOn;
 		}
@@ -131,6 +123,14 @@ import javax.persistence.Table;
 
 		public void setApproveNotifications(String approveNotifications) {
 			this.approveNotifications = approveNotifications;
+		}
+
+		public Long getReportedBy() {
+			return reportedBy;
+		}
+
+		public void setReportedBy(Long reportedBy) {
+			this.reportedBy = reportedBy;
 		}
 
 		

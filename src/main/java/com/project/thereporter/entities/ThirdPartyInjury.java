@@ -17,7 +17,7 @@ public class ThirdPartyInjury {
 	private Long id;
 
 	@Column(name = "reported_by")
-	private String reportedBy;
+	private Long reportedBy;
 
 	@Column(name = "reported_on")
 	private String reportedOn;
@@ -92,9 +92,6 @@ public class ThirdPartyInjury {
 		return id;
 	}
 
-	public String getReportedBy() {
-		return reportedBy;
-	}
 
 	public String getReportedOn() {
 		return reportedOn;
@@ -186,9 +183,6 @@ public class ThirdPartyInjury {
 		this.id = id;
 	}
 
-	public void setReportedBy(String reportedBy) {
-		this.reportedBy = reportedBy;
-	}
 
 	public void setReportedOn(String reportedOn) {
 		this.reportedOn = reportedOn;
@@ -288,6 +282,16 @@ public class ThirdPartyInjury {
 
 	public void setPartyOtherInformation(String partyOtherInformation) {
 		this.partyOtherInformation = partyOtherInformation;
+	}
+
+
+	public Long getReportedBy() {
+		return reportedBy;
+	}
+
+
+	public void setReportedBy(Long reportedBy) {
+		this.reportedBy = reportedBy;
 	}
 	
 	

@@ -14,4 +14,6 @@ import com.project.thereporter.entities.ThirdPartyInjury;
 
 public interface DangerousSituationRepository extends JpaRepository<DangerousSituation, Long> {
 
+	List<DangerousSituation> findAllByReportedBy(Long userId);
+
 }

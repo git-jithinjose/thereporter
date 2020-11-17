@@ -111,6 +111,24 @@ CREATE TABLE `employee_injury_report` (
   PRIMARY KEY (`id`)
 ) ;
 
+//17 NOV 2020
+
+ALTER TABLE `freporter`.`third_party_injury` 
+CHANGE COLUMN `reported_by` `reported_by` INT(11) NULL DEFAULT NULL ;
+
+ALTER TABLE `freporter`.`daily_activity_report` 
+CHANGE COLUMN `reported_by` `reported_by` INT(11) NULL DEFAULT NULL ;
+
+ALTER TABLE `freporter`.`dangerous_situation` 
+CHANGE COLUMN `reported_by` `reported_by` INT(11) NULL DEFAULT NULL ;
+
+ALTER TABLE `freporter`.`employee_injury_report` 
+CHANGE COLUMN `reported_by` `reported_by` INT(11) NULL DEFAULT NULL ;
+
+
+
+
+
 
 
 

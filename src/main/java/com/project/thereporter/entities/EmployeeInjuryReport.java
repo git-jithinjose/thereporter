@@ -16,7 +16,7 @@ public class EmployeeInjuryReport {
 	private Long id;
 
 	@Column(name = "reported_by")
-	private String reportedBy;
+	private Long reportedBy;
 
 	@Column(name = "reported_on")
 	private String reportedOn;
@@ -74,10 +74,6 @@ public class EmployeeInjuryReport {
 
 	public Long getId() {
 		return id;
-	}
-
-	public String getReportedBy() {
-		return reportedBy;
 	}
 
 	public String getReportedOn() {
@@ -156,10 +152,6 @@ public class EmployeeInjuryReport {
 		this.id = id;
 	}
 
-	public void setReportedBy(String reportedBy) {
-		this.reportedBy = reportedBy;
-	}
-
 	public void setReportedOn(String reportedOn) {
 		this.reportedOn = reportedOn;
 	}
@@ -230,6 +222,14 @@ public class EmployeeInjuryReport {
 
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+
+	public Long getReportedBy() {
+		return reportedBy;
+	}
+
+	public void setReportedBy(Long reportedBy) {
+		this.reportedBy = reportedBy;
 	}
 	
 }

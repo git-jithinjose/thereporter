@@ -12,4 +12,6 @@ import com.project.thereporter.entities.ThirdPartyInjury;
 
 public interface ThirdPartyInjuryRepository extends JpaRepository<ThirdPartyInjury, Long> {
 
+	List<ThirdPartyInjury> findAllByReportedBy(Long userId);
+
 }
